@@ -3,4 +3,4 @@ palm_oil_grader_100.h5
 *.pyc
 __pycache__/
 _pywrap_tensorflow_internal.so
-/workspaces/Grader/env/
+/workspaces/Grader/env/*
