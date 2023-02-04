@@ -1,4 +1,6 @@
-model.h5
+palm_oil_grader_100.h5
 *.log
 *.pyc
 __pycache__/
+File env/lib/python3.10/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so
+/workspaces/Grader/env
