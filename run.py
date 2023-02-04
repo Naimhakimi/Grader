@@ -1,4 +1,5 @@
 import streamlit as st
+from tensorflow import keras
 from keras.models import load_model
 import numpy as np
 import PIL
@@ -7,7 +8,7 @@ import PIL
 
 model = load_model('palm_oil_grader_100.h5')
 
-st.title("Grader")
+st.title("fruit Grader")
 
 uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 if uploaded_file is not None:
