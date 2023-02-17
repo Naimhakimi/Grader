@@ -7,16 +7,11 @@ import PIL
 
 
 model = load_model('palm_oil_grader_100.h5')
-
-
-
-def palm_grader():
-    st.title("Fruit Grader")
+st.title("palm oil")
+uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
     
-    uploaded_file = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
-    
-    if uploaded_file is not None: 
-            image = keras.preprocessing.image.load_img(uploaded_file, target_size=(331, 331))
+if uploaded_file is not None: 
+            image = keras.preprocessing.image.load_img(uploaded_file, target_size=(500, 500))
             st.image(image, caption='Uploaded Image.', use_column_width=True)
             image = keras.preprocessing.image.img_to_array(image)
             image = np.expand_dims(image, axis=0)
@@ -24,10 +19,3 @@ def palm_grader():
             class_names = ['Overripe', 'Ripe', 'Underipe', 'Unripe']            
             class_index = np.argmax(prediction[0])
             st.write("Classification Result:",class_names[class_index])
-
-    
-
-
-if st.button("Palm Oil Fruit Bunch"):
-    palm_grader()
-    
